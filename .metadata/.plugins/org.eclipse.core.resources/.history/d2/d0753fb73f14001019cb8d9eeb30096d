@@ -1,0 +1,19 @@
+package com.test.begin.di1;
+
+public class Service {
+
+	public void use() {
+		
+		//본인 업무 구현
+		
+		
+		//일부 업무 > 위임
+		Hong hong = new Hong();
+		hong.work();
+		
+		// 본인 업무 구현
+		
+		
+	}
+	
+}

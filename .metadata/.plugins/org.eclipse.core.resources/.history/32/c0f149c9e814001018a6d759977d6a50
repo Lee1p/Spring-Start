@@ -1,0 +1,65 @@
+package com.test.begin.di9;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+
+////아래 어노테이션 Component가 지금 bean 이랑 똑같은 방법임.
+//@Component
+//public class Service {
+//
+//	private Hong hong;
+//	
+//	//의존 주입 도구에 @Autowried를 선언
+//	//- Spring 2.5부터
+//	@Autowired
+//	public Service(Hong hong) {
+//		this.hong = hong;
+//	}
+//	
+//	public void use() {
+//		
+//		hong.work();
+//		
+//	}
+//	
+//}
+
+
+////아래 어노테이션 Component가 지금 bean 이랑 똑같은 방법임.
+//@Component
+//public class Service {
+//
+//	private Hong hong;
+//
+//	//의존 주입 도구에 @Autowried를 선언
+//	@Autowired
+//	public void setHong(Hong hong) {
+//		this.hong = hong;
+//	}
+//	
+//	public void use() {
+//		
+//		hong.work();
+//		
+//	}
+//	
+//}
+
+
+//아래 어노테이션 Component가 지금 bean 이랑 똑같은 방법임.
+@Component
+public class Service {
+
+	//멤버 변수에 직접 @Autowired 선언
+	//- 의존 주입 도구(생성자,Setter)가 필요 없다.
+	@Autowired
+	private Hong hong;
+	
+	
+	public void use() {		
+		hong.work();
+		
+	}
+	
+}

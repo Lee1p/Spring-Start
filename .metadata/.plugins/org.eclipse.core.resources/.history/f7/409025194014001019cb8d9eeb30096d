@@ -1,0 +1,20 @@
+package com.test.begin.di1;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		//의존 관계
+		//Main > (의존) > Service > (의존) > Hong
+		//사장 > 팀장 > 직원
+		
+		//Service 객체는 Main의 의존 객체이다.
+		//Hong 객체는 Service의 의존 객체이다.
+		
+		
+		Service service = new Service();
+		service.use();
+		
+	}
+	
+}

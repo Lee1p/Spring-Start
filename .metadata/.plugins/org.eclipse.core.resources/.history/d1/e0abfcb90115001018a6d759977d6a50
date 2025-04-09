@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+        
+        
+        <!--  memo.xml -->
+        
+        <!--  Spring AOP -->
+        
+        <!--  주업무 객체 -->
+        <bean class="com.test.begin2.aop.MemoImpl" id="memo"></bean>
+        
+        <!-- 보조 업무 객체 -->
+		<bean class="com.test.begin2.aop.Logger" id="logger"></bean>
+		
+		<!--  주업무 객체 + 보조 업무 객체 = AOP 설정-->
+		<aop:config>
+		
+			<!--  보조업무를 담당할 객체를 지정: 역할 부여 -->
+			<aop:aspect ref="logger"></aop:aspect>
+		
+		</aop:config>
+		
+
+</beans>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+    <!-- 주업무 객체 -->
+    <bean id="memo" class="com.test.begin2.aop.MemoImpl"/>
+
+    <!-- 보조업무 객체 -->
+    <bean id="logger" class="com.test.begin2.aop.Logger"/>
+
+    <!-- AOP 설정 -->
+    <aop:config>
+        <aop:aspect ref="logger">
+
+            <!-- 모든 메서드 대상으로 포인트컷 설정 -->
+            <aop:pointcut id="p7" expression="execution(* com.test.begin2.aop.MemoImpl.*(..))"/>
+
+            <!-- After Advice만 사용 -->
+            <aop:after method="after" pointcut-ref="p7"/>
+
+            <!-- 필요 시 다른 Advice도 추가 가능 -->
+            <!-- <aop:before method="before" pointcut-ref="p7"/> -->
+            <!-- <aop:around method="around" pointcut-ref="p7"/> -->
+            <!-- <aop:after-returning method="afterreturning" pointcut-ref="p7"/> -->
+            <!-- <aop:after-throwing method="afterthrowing" pointcut-ref="p7"/> -->
+            
+            <aop:after-throwing method="afterthrowing" pointcut="p2" throwing="e"/>
+
+        </aop:aspect>
+    </aop:config>
+
+</beans>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+        
+        
+        <!--  memo.xml -->
+        
+        <!--  Spring AOP -->
+        
+        <!--  주업무 객체 -->
+        <bean class="com.test.begin2.aop.MemoImpl" id="memo"></bean>
+        
+        <!-- 보조 업무 객체 -->
+		<bean class="com.test.begin2.aop.Logger" id="logger"></bean>
+		
+		<!--  주업무 객체 + 보조 업무 객체 = AOP 설정-->
+		<aop:config>
+		
+			<!--  보조업무를 담당할 객체를 지정: 역할 부여 -->
+			<aop:aspect ref="logger">
+			
+				<!-- 
+					주업무 객체를 지정 + 메서드를 지정
+					= PointCut 지정하기
+					
+					PointCut Expression
+					- 어떤 객체 + 어떤 메서드
+					
+					AspectJ 표현식
+					- execution() 지시자
+					- within() 지시자	
+				 -->
+				 
+				 <aop:pointcut expression="execution(public void com.test.begin2.aop.MemoImpl.add(String))" id="p1"/>
+				 
+				 <aop:pointcut expression="execution(public String com.test.begin2.aop.MemoImpl.read(String))" id="p2"/>
+				 
+				 <aop:pointcut expression="execution(public Boolean com.test.begin2.aop.MemoImpl.edit(String,String))" id="p3"/>
+				 
+				 <aop:pointcut expression="execution(public Boolean com.test.begin2.aop.MemoImpl.edit(String))" id="p3"/>
+				 
+				 <!-- 
+				 	PointCut + 보조업무객체.메서드() = 결합 > 위빙(Weaving)
+				 	1. Before Advice
+				 	2. After Advice
+				 	3. Around Advice
+				 	4. After-returning Advice
+				 	5. After-throwing Advice
+				 	
+				  -->
+				  <aop:after method="log" pointcut-ref="p1"/>
+				  <aop:after method="log" pointcut-ref="p2"/>
+				 
+			
+			</aop:aspect>
+		
+		</aop:config>
+		
+
+</beans>

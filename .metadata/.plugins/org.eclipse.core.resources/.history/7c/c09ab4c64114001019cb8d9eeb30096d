@@ -1,0 +1,8 @@
+package com.test.begin.di1;
+
+public class Lee {
+	
+	public void doSomething() {
+		System.out.println("업무를 진행합니다.");
+	}
+}

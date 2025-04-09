@@ -1,0 +1,21 @@
+## 현재 프로젝트 > 버전? > 수정
+- 자바 버전 > 11
+	- pom.xml(메이븐 설정 파일)
+	- Project facets
+- 스프링 버전 > 5.0.7
+	- pom.xml
+
+## IOC, Inversion of Control, 제어의 역전
+- 프로그램의 제어 흐름을 개발자가 아닌 프레임워크가 관리하는 개념
+
+## DI, Dependency Injection, 의존(성) 주입 
+- IoC 구현하는 방법 중 하나
+- 디자인 패턴
+- 객체가 필요로 하는 의존성을 외부에서 주입해주는 패턴
+
+
+- src/main/java > "com.test.begin.di1"
+						> "Main.java"
+						> "Service.java"
+						> "Hong.java"
+						

@@ -1,0 +1,7 @@
+package com.test.begin.di2;
+
+public class Employee {
+	
+	void work();
+
+}

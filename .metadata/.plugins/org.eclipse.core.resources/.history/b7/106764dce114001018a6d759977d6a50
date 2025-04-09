@@ -1,0 +1,10 @@
+package com.test.begin2.di9;
+
+import org.springframework.test.context.ContextConfiguration;
+
+//테스트용 자바 클래스 > JUnit > 단위 테스트 도구
+
+@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
+public class DITest {
+
+}

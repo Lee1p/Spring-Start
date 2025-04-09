@@ -1,0 +1,16 @@
+hello > 필기.txt
+
+## 프로젝트 생성
+- "hello" + Spring MVC Project > "com.test.hello"> Finish
+
+## 현재 프로젝트 > 버전? > 수정 
+- 자바 버전 > 11
+	- pom.xml(메이븐 설정 파일)
+	- Project facets
+- 스프링 버전
+	- pom.xml
+
+## STS3에서 스프링 프로젝트 실행하는 방법
+- Ctrl + F11 > (톰캣 시작 + 브라우저 실행(가상 주소 대입)) 사용 안함
+
+

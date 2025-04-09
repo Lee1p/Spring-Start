@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        
+        <!--  memo.xml -->
+        
+        <!--  Spring AOP -->
+        
+        <!--  주업무 객체 -->
+        <bean class="com.test.begin2.aop.MemoImpl" id="memo"></bean>
+        
+        <!-- 보조 업무 객체 -->
+		<bean class="com.test.begin2.aop.Logger" id="logger"></bean>
+		
+		<!--  주업무 객체 + 보조 업무 객체-->
+		
+
+</beans>

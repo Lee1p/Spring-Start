@@ -1,0 +1,28 @@
+package com.test.web.model;
+
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.naming.spi.DirStateFactory.Result;
+
+public class SpringDAO {
+
+	private Connection conn;
+	private Statement stat;
+	private PreparedStatement pstat;
+	private ResultSet re;
+	
+	public SpringDAO() {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection("", "", "");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+}
