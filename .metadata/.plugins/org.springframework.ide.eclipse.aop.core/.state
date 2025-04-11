@@ -2,8 +2,10 @@
 <aop-reference-model>
 <aop-project name="hello"/>
 <aop-project name="WebTest"/>
+<aop-project name="JunitTest"/>
 <aop-project name="aaa"/>
 <aop-project name="BeginTest"/>
+<aop-project name="MyBatisTest"/>
 <aop-project name="BeginTest2">
 <aspect-definition advice-class-name="com.test.begin2.aop.Logger" advice-method-name="afterthrowing" advice-type="AFTER_THROWING" aspect-end-line-number="82" aspect-name="logger" aspect-start-line-number="82" factory-id="org.springframework.ide.eclipse.aop.core.beanAspectDefinitionElementFactory" file="/BeginTest2/src/main/java/com/test/begin2/aop/memo.xml" pointcut-expression="execution(public String com.test.begin2.aop.MemoImpl.read(String))" proxy-target-class="false" throwing="e">
 <aop-reference advice-type="AFTER_THROWING" bean="1:BeansModel|2:BeginTest2|3:src/main/java/com/test/begin2/aop/memo.xml|7:beans:6|8:memo:12" bean-file="/BeginTest2/src/main/java/com/test/begin2/aop/memo.xml" bean-start-line="12" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/BeginTest2/src/main/java/com/test/begin2/aop/memo.xml" source="=BeginTest2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.test.begin2.aop{Logger.java[Logger~afterthrowing~QException;" source-start-line="44" target="=BeginTest2/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.test.begin2.aop{MemoImpl.java[MemoImpl~read~QString;" target-start-line="13"/>
